@@ -1,0 +1,14 @@
+venv
+__pycache__
+*.pyc
+_storage
+_storage_test
+_scripts
+_svn_repos_test
+*.o
+db.sqlite3
+.env
+cache-*
+*.sqlite3
+
+

@@ -1,0 +1,79 @@
+body {
+    font-family: 'Avenir Next', 'HelveticaNeue-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #222222;
+}
+
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+
+.content {
+    font-size: 1.125em;
+    margin-top: 20px;
+    margin-left: 250px;
+    width: 620px;
+}
+
+
+article {
+    line-height: 1.6;
+}
+
+article header {
+    color: #888;
+}
+
+article h2 a {
+    text-decoration: none;
+    color: #000;
+}
+
+article h2 {
+    margin-bottom: 0px;
+}
+
+article header p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+
+.box {
+
+}
+
+.sidebar {
+    height: 100%;
+    width: 190px;
+    top: 0;
+    left: 0;
+    background-color: #5F9EA0;
+    position: fixed;
+}
+
+.sidebar li {
+    padding: 5px;
+    list-style-type: none;
+}
+
+.sidebar p {
+    margin-left: 20px;
+    color: white;
+}
+
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.sidebar a:hover {
+    color: #818181;
+}

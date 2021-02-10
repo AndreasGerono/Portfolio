@@ -3,6 +3,7 @@ body {
     margin: 0;
     background-color: #fff;
     color: #222222;
+    word-wrap: break-word;
 }
 
 
@@ -13,15 +14,8 @@ h2 {
 }
 
 
-.content {
-    font-size: 1.125em;
-    margin-top: 20px;
-    margin-left: 250px;
-    width: 620px;
-}
-
-
 article {
+    margin-top: 50px;
     line-height: 1.6;
 }
 
@@ -43,6 +37,20 @@ article header p {
     margin: 0;
 }
 
+footer {
+    margin: 2em 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+footer a {
+    color: #b5190e;
+}
+
+.content {
+    width: 620px;
+    margin-left: 270px;
+}
 
 .box {
 
@@ -55,6 +63,16 @@ article header p {
     left: 0;
     background-color: #5F9EA0;
     position: fixed;
+}
+
+
+.sidebar p {
+    margin-top: 50px;
+}
+
+.sidebar ul {
+    padding-bottom: 50px;
+    border-bottom: 1px solid black;
 }
 
 .sidebar li {

@@ -7,10 +7,10 @@
     <header>
         {% url 'article' 2020 12 "some_slug" as article_url %}
         <h2><a href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">{{ article.title }}</a></h3>
-        <p>{{article.date}}</p>
+        <p>{{article.date|date:"F d, Y" }}</p>
     </header>
     <p>
-        {{article.text}}
+        {{article.text|truncatewords:100}}
     </p>
 </article>
 {% endfor %}

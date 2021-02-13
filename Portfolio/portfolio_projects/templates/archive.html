@@ -2,18 +2,19 @@
 {% block title %} Welcome! {% endblock %}
 {% block content %} 
 
-
-<h2>Archive</h2>
-{% for year in articles_in_years %}
-<ul></ul>
-    <p>{{year.0.date.year}}</p>
-    {% for article in year %}
-    <li>
-        <a href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">{{ article.title }}</a>
-        <span>{{article.date}}</span>
-    </li>
+<div class="archive">
+    <h2>Archive</h2>
+    {% for year in articles_in_years %}
+    <ul></ul>
+        <p>{{year.0.date.year}}</p>
+        {% for article in year %}
+        <li>
+            <a href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">{{ article.title }}</a>
+            <span> - {{article.date|date:"F d, Y" }}</span>
+        </li>
+        {% endfor %}
+    <ul></ul>
     {% endfor %}
-<ul></ul>
-{% endfor %}
+</div>
 {% endblock %}
 

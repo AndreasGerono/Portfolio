@@ -1,6 +1,12 @@
+html {
+    overflow:scroll;
+}
+
+
+
 body {
     font-family: 'Avenir Next', 'HelveticaNeue-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 0;
+    margin: 0 auto;
     background-color: #fff;
     color: #222222;
     word-wrap: break-word;
@@ -11,17 +17,16 @@ h2 {
     font-size: 1.5em;
     line-height: 1.25;
     font-weight: 500;
+    color: #000;
 }
 
 
 article {
     margin-top: 50px;
     line-height: 1.6;
+    margin-left: -2px;
 }
 
-article header {
-    color: #888;
-}
 
 article h2 a {
     text-decoration: none;
@@ -30,6 +35,7 @@ article h2 a {
 
 article h2 {
     margin-bottom: 0px;
+    color: #000;
 }
 
 article header p {
@@ -38,7 +44,7 @@ article header p {
 }
 
 footer {
-    margin: 2em 0;
+    margin:  0;
     text-align: center;
     font-size: 13px;
 }
@@ -48,31 +54,38 @@ footer a {
 }
 
 .content {
-    width: 620px;
-    margin-left: 270px;
+    width: 600px;
+    min-width: 600px;
+    margin: 0 auto;
 }
 
-.box {
-
-}
 
 .sidebar {
+    width: 200px;
+    min-width: 200px;
+    margin-right: 50px;
     height: 100%;
-    width: 190px;
     top: 0;
     left: 0;
     background-color: #5F9EA0;
-    position: fixed;
+    position: sticky;
+    border-bottom: 1px solid black;
+
 }
 
+
+
+.box {
+    display: flex;
+    /*justify-content: space-between;*/
+}
 
 .sidebar p {
     margin-top: 50px;
 }
 
 .sidebar ul {
-    padding-bottom: 50px;
-    border-bottom: 1px solid black;
+    padding-bottom: 200px;
 }
 
 .sidebar li {
@@ -89,9 +102,15 @@ footer a {
 .sidebar a {
     text-decoration: none;
     color: white;
-
 }
 
 .sidebar a:hover {
     color: #818181;
 }
+
+
+.space {
+    width: 160px;
+    margin-left: 50px;
+}
+

@@ -13,8 +13,10 @@ def index(request):
 
 def article_detail(request, year, month, slug):
     article = get_object_or_404(m.Article, date__year=year, date__month=month, slug=slug)
+    images = m.Image.objects.all()
     context = {
         "article": article,
+        "images": images
     }
     return render(request, 'article.html', context)
 
@@ -48,8 +50,6 @@ def archive(request):
     for year in years:
         article = m.Article.objects.filter(date__year=year)
         articles_in_years.append(article)
-
-    print(articles_in_years)
 
     context = {
         "articles_in_years": articles_in_years,

@@ -9,6 +9,7 @@ class Article(admin.ModelAdmin):
     list_display = ('title', 'date')
     ordering = ('-date',)
     readonly_fields = ('slug',)
+
     def get_form(self, request, obj=None, **kwargs):
         form = super(Article, self).get_form(request, obj, **kwargs)
         form.base_fields['text'].widget.attrs['style'] = 'height: 1000px;'
@@ -17,4 +18,4 @@ class Article(admin.ModelAdmin):
 
 @admin.register(m.Image)
 class Image(admin.ModelAdmin):
-    list_display = ('tag',)
+    list_display = ('image',)

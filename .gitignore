@@ -10,5 +10,6 @@ db.sqlite3
 .env
 cache-*
 *.sqlite3
-
+.venv
+pyvenv.cfg
 images

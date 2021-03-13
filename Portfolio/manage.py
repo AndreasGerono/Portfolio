@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Portfolio.settings.development')  # noqa: E501
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Portfolio.settings.prodcution')  # noqa: E501
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

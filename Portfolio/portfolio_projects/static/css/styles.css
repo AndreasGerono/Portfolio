@@ -61,14 +61,13 @@ a {
 .sidebar {
     width: 200px;
     min-width: 200px;
-    margin-right: 50px;
+    margin-right: 10px;
     height: 100%;
     top: 0;
     left: 0;
     background-color: #5F9EA0;
     position: sticky;
     border-bottom: 1px solid black;
-
 }
 
 .box {
@@ -104,8 +103,8 @@ a {
 
 
 .space {
-    width: 160px;
-    margin-left: 50px;
+    width: 200px;
+    margin-left: 10px;
 }
 
 .archive {
@@ -123,7 +122,7 @@ a {
     margin-left: 32px;
 }
 
-@media (max-width:850px) {
+@media (max-width:800px) {
 .sidebar {
     width: 100%;
     min-width: 100%;

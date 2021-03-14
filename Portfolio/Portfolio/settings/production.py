@@ -11,7 +11,7 @@ SESSION_COOKIE_SECURE = True
 SECRET_KEY = config('SECRET_KEY')  # noqa: F405
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 DATABASES = {

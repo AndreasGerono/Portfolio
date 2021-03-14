@@ -1,7 +1,7 @@
 from decouple import config
 from Portfolio.settings.common import *  # noqa: F403
 
-ALLOWED_HOSTS = ['68.65.122.49', 'localhost']
+ALLOWED_HOSTS = ['68.65.122.49', 'localhost', '127.0.0.1']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
@@ -11,7 +11,7 @@ SESSION_COOKIE_SECURE = True
 SECRET_KEY = config('SECRET_KEY')  # noqa: F405
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 DATABASES = {
@@ -22,7 +22,11 @@ DATABASES = {
 }
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.  # noqa: E501
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # noqa: E501, F405
+STATIC_ROOT = os.path.join(BASE_DIR, 'portfolio_projects', 'static')  # noqa: E501, F405
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
 # The URL to use when referring to static files (where they will be served from)  # noqa: E501
 STATIC_URL = '/static/'  # noqa: W292`
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'portfolio_projects', 'static'),  # noqa: F405
+]

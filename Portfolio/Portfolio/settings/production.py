@@ -23,4 +23,7 @@ DATABASES = {
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.  # noqa: E501
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # noqa: E501, F405
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = '/home/andrwlkn/public_html/static'  # noqa: E501, F405
+MEDIA_ROOT = '/home/andrwlkn/public_html/media'  # noqa: E501, F405

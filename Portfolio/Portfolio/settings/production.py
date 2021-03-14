@@ -1,7 +1,7 @@
 from decouple import config
 from Portfolio.settings.common import *  # noqa: F403
 
-ALLOWED_HOSTS = ['68.65.122.49', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 

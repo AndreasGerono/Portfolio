@@ -13,3 +13,4 @@ cache-*
 .venv
 pyvenv.cfg
 images
+Portfolio/Portfolio/static/

@@ -1,0 +1,1 @@
+from Portfolio.wsgi import application  # noqa: F401, W292

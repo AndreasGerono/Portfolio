@@ -30,12 +30,12 @@ class Article(models.Model):
 
 
 def get_image_path(instance, filename):
-    print(Article.last())
-    return os.path.join('images', Article.last(), filename)
+    return os.path.join('images', 'articles', filename)
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to=get_image_path)
+    image = models.ImageField(upload_to='media')
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

@@ -41,10 +41,17 @@ article header p {
     color: #888;
 }
 
+article p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
 footer {
     margin:  0;
     text-align: center;
     font-size: 13px;
+    margin-top: 50px;
 }
 
 a {
@@ -120,6 +127,14 @@ a {
 
 .archive li {
     margin-left: 32px;
+}
+
+.images {
+   text-align: center;
+}
+.images img{
+    margin-top: 50px;
+    max-width: 500px;
 }
 
 @media (max-width:800px) {

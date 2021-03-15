@@ -14,3 +14,4 @@ cache-*
 pyvenv.cfg
 images
 Portfolio/Portfolio/static/
+media

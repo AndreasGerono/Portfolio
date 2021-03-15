@@ -12,7 +12,7 @@ class Article(admin.ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         form = super(Article, self).get_form(request, obj, **kwargs)
-        form.base_fields['text'].widget.attrs['style'] = 'height: 1000px;'
+        form.base_fields['text'].widget.attrs['style'] = 'height: 800px; font-size: 1.5em;'  # noqa: E501
         return form
 
 

@@ -8,6 +8,13 @@
         <h2>{{article.title}}</h2>
         <p>{{article.date|date:"F d, Y" }}</p>
     </header>
-    <p> {{article.text|safe}} </p>
+    <p > {{article.text|safe}} </p>
+    
+    <div class="images">
+    	{% for image in images %}
+    		<img src="{{ image.image.url }}"/>
+    	{% endfor %}
+
+    </div>
 </article>
 {% endblock %}

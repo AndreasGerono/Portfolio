@@ -13,7 +13,8 @@ def index(request):
 
 def article_detail(request, year, month, slug):
     article = get_object_or_404(m.Article, date__year=year, date__month=month, slug=slug)
-    images = m.Image.objects.all()
+    images = article.image_set.all()
+    print(images)
     context = {
         "article": article,
         "images": images
@@ -43,6 +44,7 @@ def about(request):
 
 def my404(request, exception):
     return render(request, '404.html')
+
 
 def archive(request):
     years = m.Article.objects.values_list('date__year', flat=True).distinct().order_by()

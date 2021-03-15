@@ -47,9 +47,9 @@ def my404(request, exception):
 
 
 def archive(request):
-    years = m.Article.objects.values_list('date__year', flat=True).distinct().order_by()
+    years = m.Article.objects.values_list('date__year', flat=True).distinct().order_by()  # noqa: E501
     articles_in_years = []
-    for year in years:
+    for year in sorted(years, reverse=True):
         article = m.Article.objects.filter(date__year=year)
         articles_in_years.append(article)
 

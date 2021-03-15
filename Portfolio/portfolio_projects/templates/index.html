@@ -10,7 +10,9 @@
         <p >{{article.date|date:"F d, Y" }}</p>
     </header>
     <p>
-        {{article.text|truncatewords:150}} <a class="no_style" href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">read more</a>
+        {{article.text|truncatewords:150|safe}}
+        <br>
+        <a class="no_style" href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">read more</a>
     </p>
 </article>
 {% endfor %}

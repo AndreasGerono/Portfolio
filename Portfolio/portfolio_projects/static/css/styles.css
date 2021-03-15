@@ -42,8 +42,8 @@ article header p {
 }
 
 article p {
-  text-align: justify;
-  text-justify: inter-word;
+  /*text-align: justify;*/
+  /*text-justify: inter-word;*/
 }
 
 a.no_style {

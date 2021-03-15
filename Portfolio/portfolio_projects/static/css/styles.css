@@ -139,14 +139,14 @@ a {
 }
 .images img{
     margin-top: 50px;
-    max-width: 500px;
+    max-width: min(500px, calc(100% - 50px));
 }
 
 @media (max-width:800px) {
 .sidebar {
     width: 100%;
     min-width: 100%;
-    margin-right: 0px;
+    margin-right: 0px;s
     top: 0;
     left: 0;
     background-color: #5F9EA0;
@@ -180,8 +180,8 @@ a {
 
 .content {
     max-width: 600px;
-    width: min(600px, calc(100% - 10px));
-    min-width: min(600px, calc(100% - 10px));
+    width: min(600px, calc(100% - 30px));
+    min-width: min(600px, calc(100% - 30px));
 }
 
 }

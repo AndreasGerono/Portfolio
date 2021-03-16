@@ -4,7 +4,7 @@ from portfolio_projects import models as m
 
 
 def index(request):
-    articles = m.Article.objects.all()[:5]
+    articles = m.Article.objects.all()[:8]
     context = {
         "articles": articles,
     }

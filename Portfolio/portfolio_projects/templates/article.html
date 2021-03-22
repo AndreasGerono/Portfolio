@@ -17,7 +17,7 @@
     
         <div class="gallery">
             {% for image in images %}
-            <img class="gallery__img" id="image-{{ forloop.counter }}" src="{{ image.image.url }}" alt="" />
+            <img class="gallery__img" id="image-{{ forloop.counter }}" src="{{ image.image.url }}" alt="{{ image.alt }}" />
             {% endfor %}
         </div>
 

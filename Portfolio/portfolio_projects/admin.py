@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from portfolio_projects import models as m
 
 # Register your models here.
@@ -18,4 +19,10 @@ class Article(admin.ModelAdmin):
 
 @admin.register(m.Image)
 class Image(admin.ModelAdmin):
-    list_display = ('image',)
+
+    def image_tag(self, obj):
+        return format_html('<img style="height: 70px;" src="{}" />'.format(obj.image.url))
+
+    image_tag.short_description = 'Preview'
+    list_display = ('image_tag', 'image')
+    fields = ('article', 'alt', 'image')

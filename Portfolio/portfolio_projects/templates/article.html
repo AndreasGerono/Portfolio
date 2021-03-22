@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 {% block title %} {{article.title}} {% endblock %}
 
-{% block content %}{% load static %}
+{% block styles %}{% load static %}
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+{% endblock %}
+
+
+{% block content %}
 
 <article>
     <header>
         <h2>{{article.title}}</h2>
         <p>{{article.date|date:"F d, Y" }}</p>
     </header>
-    <p > {{article.text|safe}} </p>
+    <p> {{article.text|safe}} </p>
     
-    <div class="images">
-    	{% for image in images %}
-    		<img src="{{ image.image.url }}"/>
-    	{% endfor %}
+        <div class="gallery">
+            {% for image in images %}
+            <img class="gallery__img" id="image-{{ forloop.counter }}" src="{{ image.image.url }}" alt="" />
+            {% endfor %}
+        </div>
 
-    </div>
 </article>
 {% endblock %}

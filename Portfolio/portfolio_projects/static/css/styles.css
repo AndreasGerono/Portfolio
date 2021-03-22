@@ -138,15 +138,6 @@ footer {
     margin-left: 32px;
 }
 
-.images {
-    text-align: center;
-    /*margin-bottom: 50px;*/
-}
-
-.images img{
-    margin-top: 50px;
-    max-width: min(500px, calc(100% - 50px));
-}
 
 @media (max-width:840px) {
 .sidebar {

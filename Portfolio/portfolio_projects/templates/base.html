@@ -7,6 +7,7 @@
     <!-- Add additional CSS and scripts in static file -->
     {% load static %} <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% load static %} <link rel="icon"href="{% static 'favicon.ico' %}">
+    {% block styles %} {% endblock %}
 </head>
         
 <body>

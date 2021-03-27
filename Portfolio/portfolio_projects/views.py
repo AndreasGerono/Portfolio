@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.db.models.query import QuerySet
 from portfolio_projects import models as m
 
 
@@ -12,9 +11,8 @@ def index(request):
 
 
 def article_detail(request, year, month, slug):
-    article = get_object_or_404(m.Article, date__year=year, date__month=month, slug=slug)
+    article = get_object_or_404(m.Article, date__year=year, date__month=month, slug=slug)  # noqa: E501
     images = article.image_set.all()
-    print(images)
     context = {
         "article": article,
         "images": images

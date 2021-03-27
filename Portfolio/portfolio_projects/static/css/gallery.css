@@ -1,40 +1,78 @@
-img {
-	display: block;
-	max-width: 100%;
-}
-
-
-.gallery::-webkit-scrollbar {
+.images::-webkit-scrollbar {
     -webkit-appearance: none;
 }
 
-.gallery::-webkit-scrollbar:vertical {
-    width: 11px;
-}
-
-.gallery::-webkit-scrollbar:horizontal {
-    height: 11px;
-}
-
-.gallery::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid white; /* should match background, can't be transparent */
-    background-color: rgba(0, 0, 0, .5);
-}
-
-
-.gallery {
-	margin: 50px 25px 0px 25px;
-	overflow-x: scroll;
+.images {
+	margin-top: 50px;
+	margin-bottom: 0px;
+	overflow-x: auto;
 	overflow-y: hidden;
 	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
 	display: flex;
-	height: 70vh;
+	height: min(75vh, 800px);
 }
 
-.gallery__img {
+.images img {
 	scroll-snap-align: start;
-	margin-bottom: 10px;
 	object-fit: scale-down;
+	display: block;
+	max-width: 100%;
 }
+
+/*
+ *  Dotnav styles were borrowed from Apple.com page 
+ */
+
+.dotnav {
+	margin-top: 0;
+    text-align:center;
+}
+
+.dotnav ul {
+    margin: 0;
+    list-style: none;
+    display:inline-block;
+    position: relative;
+    top: -10px;
+	right: 20px;	/* HACK - TODO Fix this strange margin */
+}
+
+.dotnav li {
+    list-style: none;
+    margin: 0 7px;
+    width: 8px;
+    height: 8px;
+    float: left;
+    position:relative;
+}
+
+.dotnav-item {
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    outline: none;
+    position: absolute;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 53.3%, .4);
+    box-sizing: content-box;
+}
+
+.dotnav-item:hover {
+    background-color:hsla(0, 0%, 53.3%, .7);
+}
+
+.dotnav-item:focus {
+    box-shadow: 0 0 0 3px rgba(131, 192, 253, .5);
+    outline:none;
+}
+
+.dotnav-item.current {
+    background-color: #888;
+    cursor:default;
+}
+
+/*
+ *  
+ */

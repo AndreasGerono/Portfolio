@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
 {% endblock %}
 
-
 {% block content %}
 
 <article>
@@ -15,11 +14,26 @@
     </header>
     <p> {{article.text|safe}} </p>
     
-        <div class="gallery">
+    <div class="gallery">
+        <div class="images">
             {% for image in images %}
-            <img class="gallery__img" id="image-{{ forloop.counter }}" src="{{ image.image.url }}" alt="{{ image.alt }}" />
+            <img src="{{ image.image.url }}" alt="{{ image.alt }}" />
             {% endfor %}
         </div>
 
+        <nav class="dotnav"> 
+            <ul>
+                {% for image in images %}
+                <li><span class="dotnav-item"></span></li> 
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
 </article>
+
+{% block body_script %} {% load static %}
+<script type="text/javascript" src="{% static 'scripts/gallery.js' %}"></script>
+{% endblock %}
+
 {% endblock %}

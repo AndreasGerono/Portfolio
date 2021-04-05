@@ -2,6 +2,20 @@
     -webkit-appearance: none;
 }
 
+
+.images::-webkit-scrollbar:vertical {
+    display: none;
+ }
+
+.images::-webkit-scrollbar:horizontal {
+    display: none;
+}
+
+.images::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+
 .images {
 	margin-top: 50px;
 	margin-bottom: 0px;
@@ -34,7 +48,6 @@
     list-style: none;
     display:inline-block;
     position: relative;
-    top: -10px;
 	right: 20px;	/* HACK - TODO Fix this strange margin */
 }
 
@@ -55,6 +68,7 @@
     outline: none;
     position: absolute;
     border-radius: 50%;
+    padding: 1px;
     background-color: hsla(0, 0%, 53.3%, .4);
     box-sizing: content-box;
 }

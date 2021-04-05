@@ -1,5 +1,5 @@
 from decouple import config
-from Portfolio.settings.common import *  # noqa: F403
+from Portfolio.settings.common import *  # noqa: F401, F403
 
 ALLOWED_HOSTS = ['*']
 
@@ -12,6 +12,8 @@ SECRET_KEY = config('SECRET_KEY')  # noqa: F405
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'  # noqa: E501
 
 
 DATABASES = {

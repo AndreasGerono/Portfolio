@@ -14,26 +14,30 @@
     </header>
     <p> {{article.text|safe}} </p>
     
-    <div class="gallery">
-        <div class="images">
-            {% for image in images %}
-            <img src="{{ image.image.url }}" alt="{{ image.alt }}" />
-            {% endfor %}
-        </div>
+</article>
 
-        <nav class="dotnav"> 
-            <ul>
-                {% for image in images %}
-                <li><span class="dotnav-item"></span></li> 
-                {% endfor %}
-            </ul>
-        </nav>
+<div class="gallery">
+    <div class="images">
+        {% for image in images %}
+        <img src="{{ image.image.url }}" alt="{{ image.alt }}" />
+        {% endfor %}
     </div>
 
-</article>
+    {% if images|length > 1 %}
+    <nav class="dotnav"> 
+        <ul>
+            {% for image in images %}
+            <li><span class="dotnav-item"></span></li> 
+            {% endfor %}
+        </ul>
+    </nav>
+    {% endif %}
+
+
+</div>
+
+{% endblock %}
 
 {% block body_script %} {% load static %}
 <script type="text/javascript" src="{% static 'scripts/gallery.js' %}"></script>
-{% endblock %}
-
 {% endblock %}

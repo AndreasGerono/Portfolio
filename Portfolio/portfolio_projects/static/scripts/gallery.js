@@ -1,7 +1,7 @@
 var images = document.querySelectorAll(".images img");
 var dot_items = document.querySelectorAll(".dotnav-item");
 
-var observer = new IntersectionObserver( (entries) => {
+var observer = new IntersectionObserver((entries) => {
     if(entries[0].isIntersecting === true){
         let target = entries[0].target;
         let dot = dot_items[target.index];

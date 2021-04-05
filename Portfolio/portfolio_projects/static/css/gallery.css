@@ -32,6 +32,7 @@
 	object-fit: scale-down;
 	display: block;
 	max-width: 100%;
+    margin-right: 10px;
 }
 
 /*
@@ -68,7 +69,7 @@
     outline: none;
     position: absolute;
     border-radius: 50%;
-    padding: 1px;
+    padding: 0.5px;
     background-color: hsla(0, 0%, 53.3%, .4);
     box-sizing: content-box;
 }

@@ -29,6 +29,7 @@ def get_image_path(instance, filename):
 class Image(models.Model):
     image = models.ImageField(upload_to=get_image_path)
     alt = models.CharField(max_length=100, default='')
+    title = models.CharField(max_length=100, default='')
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):

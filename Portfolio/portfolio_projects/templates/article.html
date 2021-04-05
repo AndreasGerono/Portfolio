@@ -19,7 +19,7 @@
 <div class="gallery">
     <div class="images">
         {% for image in images %}
-        <img src="{{ image.image.url }}" alt="{{ image.alt }}" />
+        <img src="{{ image.image.url }}" alt="{{ image.alt }}" title="{{ image.title }}" />
         {% endfor %}
     </div>
 

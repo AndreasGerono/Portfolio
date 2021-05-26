@@ -2,7 +2,6 @@
     -webkit-appearance: none;
 }
 
-
 .images::-webkit-scrollbar:vertical {
     display: none;
  }
@@ -15,24 +14,37 @@
     display: none;
 }
 
-
 .images {
-	margin-top: 50px;
-	margin-bottom: 0px;
-	overflow-x: auto;
-	overflow-y: hidden;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
-	display: flex;
-	height: min(75vh, 800px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .images img {
-	scroll-snap-align: start;
-	object-fit: scale-down;
-	display: block;
-	max-width: 100%;
-    margin-right: 10px;
+    display: block;
+    max-width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    object-fit: scale-down;
+    /*margin-top: 10px;*/
+    margin: 5px auto 5px auto;
+    filter: drop-shadow(1.75px 1.75px 2px rgba(0, 0, 0, 0.5));
+}
+
+.images div {
+    scroll-snap-align: start;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.images {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: min(75vh, 800px);    
 }
 
 /*

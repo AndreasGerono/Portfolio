@@ -17,7 +17,7 @@ function set_current(dot) {
 }
 
 function dot_click(){
-    images[this.index].scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'start' });
+    images[this.index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     set_current(this);
 }
 

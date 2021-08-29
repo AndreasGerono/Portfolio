@@ -31,9 +31,3 @@ class Image(models.Model):
     alt = models.CharField(max_length=100, default='')
     title = models.CharField(max_length=100, default='')
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        # Remove Exif data!
-        image = PIL.Image.open(self.image.path)
-        image.save(self.image.path)

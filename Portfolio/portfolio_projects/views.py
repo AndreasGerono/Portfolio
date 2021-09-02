@@ -3,7 +3,7 @@ from portfolio_projects import models as m
 
 
 def index(request):
-    articles = m.Article.objects.all()[:8]
+    articles = m.Article.objects.filter(is_draft=False)[:8]
     context = {
         "articles": articles,
     }
@@ -21,7 +21,7 @@ def article_detail(request, year, month, slug):
 
 
 def month_archive(request, year, month):
-    articles = m.Article.objects.filter(date__year=year, date__month=month)
+    articles = m.Article.objects.filter(date__year=year, date__month=month, is_draft=False)
     context = {
         "articles": articles,
     }
@@ -29,10 +29,10 @@ def month_archive(request, year, month):
 
 
 def year_archive(request, year):
-    articles = m.Article.objects.filter(date__year=year)
+    articles = m.Article.objects.filter(date__year=year, is_draft=False)
     context = {
         "articles": articles,
-    }
+        }
     return render(request, 'index.html', context)
 
 
@@ -45,10 +45,11 @@ def my404(request, exception):
 
 
 def archive(request):
-    years = m.Article.objects.values_list('date__year', flat=True).distinct().order_by()  # noqa: E501
+    years = m.Article.objects.values_list('date__year', flat=True).distinct().order_by()
+
     articles_in_years = []
     for year in sorted(years, reverse=True):
-        article = m.Article.objects.filter(date__year=year)
+        article = m.Article.objects.filter(date__year=year, is_draft=False)
         articles_in_years.append(article)
 
     context = {

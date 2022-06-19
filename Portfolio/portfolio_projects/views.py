@@ -1,4 +1,7 @@
+from xml.dom.minidom import Document
+from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.template import Context, TemplateDoesNotExist, loader
 from portfolio_projects import models as m
 
 
@@ -8,6 +11,14 @@ def index(request):
         "articles": articles,
     }
     return render(request, 'index.html', context)
+
+def demo(request, id):
+    try:
+        t = loader.get_template(f'demo_{id}.html').template
+        context = Context()
+        return HttpResponse(t.render(context))
+    except TemplateDoesNotExist:
+        raise Http404
 
 
 def article_detail(request, year, month, slug):

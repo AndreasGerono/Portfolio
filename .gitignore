@@ -16,3 +16,7 @@ images
 Portfolio/Portfolio/static/
 media
 manage.py
+.DS_Store
+.vscode/
+*.db
+*.cpy

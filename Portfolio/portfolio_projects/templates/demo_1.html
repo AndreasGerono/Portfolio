@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Rock Paper Scissors Lizzard Spock{% endblock %}
+{% block head_script %} {% load static %}
+<script type="text/javascript" src="{% static 'scripts/tf.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/demo_1/webcam.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/demo_1/rps-dataset.js' %}"></script>
+{% endblock %}
+{% block content %}
+<article>
+    <header>
+        <h2>Rock Paper Scissors Lizzard Spock game</h2>
+    </header>
+    <br>
+    <div>
+        <video autoplay playsinline muted id="wc" width="224" height="224"></video>
+    </div>
+    <br>
+    <button type="button" id="0" onclick="handleButton(this)">Rock</button>
+    <button type="button" id="1" onclick="handleButton(this)">Paper</button>
+    <button type="button" id="2" onclick="handleButton(this)">Scissors</button>
+    <button type="button" id="3" onclick="handleButton(this)">Spock</button>
+    <button type="button" id="4" onclick="handleButton(this)">Lizard</button>
+    <button type="button" id="train" onclick="doTraining()" disabled>Train Network</button>
+    <div id="rocksamples">Rock Samples: 0</div>
+    <div id="papersamples">Paper Samples: 0</div>
+    <div id="scissorssamples">Scissors Samples: 0</div>
+    <div id="spocksamples">Spock Samples: 0</div>
+    <div id="lizardsamples">Lizard Samples: 0</div>
+    <div id="dummy">Once training is complete, click 'Start Predicting' to see predictions. Hint: get at least 5 samples
+        of each sign and try changing the pose between to get better results.</div>
+    <button type="button" id="startPredicting" onclick="startPredicting()" disabled>Start Predicting</button>
+    <div id="prediction">&nbsp</div>
+</article>
+{% endblock %}
+{% block body_script %} {% load static %}
+<script type="text/javascript" src="{% static 'scripts/demo_1/script.js' %}"></script>
+{% endblock %}

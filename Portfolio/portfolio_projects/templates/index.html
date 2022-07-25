@@ -6,13 +6,13 @@
 <article>
     <header>
         {% url 'article' 2020 12 "some_slug" as article_url %}
-        <h2><a href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">{{ article.title }}</a></h3>
+        <h2><a href="{% url 'article' article.date.year article.date.month article.slug %}">{{ article.title }}</a></h3>
         <p >{{article.date|date:"F d, Y" }}</p>
     </header>
     <p>
         {{article.text|truncatewords_html:150|safe}}
         <br>
-        <a class="no_style" href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">read more</a>
+        <a class="no_style" href="{% url 'article' article.date.year article.date.month article.slug %}">read more</a>
     </p>
 </article>
 {% endfor %}

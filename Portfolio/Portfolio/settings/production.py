@@ -19,11 +19,11 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesSto
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'andrwlkn_portfolio',
-        'USER': 'andrwlkn_admin',
-        'PASSWORD': 'vd6@qiFP!cu{',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
         'OPTIONS': {
                     'charset': 'utf8mb4',
                     'use_unicode': True, },
@@ -34,5 +34,5 @@ DATABASES = {
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = '/home/andrwlkn/public_html/static'  # noqa: E501, F405
-MEDIA_ROOT = '/home/andrwlkn/public_html/media'  # noqa: E501, F405
+STATIC_ROOT = config('STATIC_ROOT')
+MEDIA_ROOT = config('MEDIA_ROOT')

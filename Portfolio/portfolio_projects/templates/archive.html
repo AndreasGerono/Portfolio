@@ -9,7 +9,7 @@
         <p>{{year.0.date.year}}</p>
         {% for article in year %}
         <li>
-            <a href="/{{article.date.year}}/{{article.date.month}}/{{article.slug}}">{{ article.title }}</a>
+            <a href="{% url 'article' article.date.year article.date.month article.slug %}">{{ article.title }}</a>
             <span> - {{article.date|date:"F d, Y" }}</span>
         </li>
         {% endfor %}
